@@ -1,0 +1,117 @@
+/* General Styling */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(2, 2, 2);
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+/* Content */
+.content {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Description Section */
+.description-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.description-container h1 {
+    font-size: 2rem;
+    color: #ffd700;
+}
+
+.description-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+/* Carousel Section */
+.carousel-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    perspective: 1200px;
+}
+
+/* Blocks */
+.block {
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smooth easing */
+    will-change: transform;
+}
+
+.block img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    overflow: visible;
+}
+
+/* Specific Positioning */
+.block.left {
+    transform: translateX(-700px) scale(0.8);
+}
+
+.block.center {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transform: translateX(0) translateY(70px) scale(4);
+}
+
+.block.right {
+    transform: translateX(700px) scale(0.8);
+}
+
+.block.hidden {
+    opacity: 0;                  /* Make it invisible */
+    transform: scale(0.1);       /* Shrink the block to 10% of its size */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth shrink animation */
+}
